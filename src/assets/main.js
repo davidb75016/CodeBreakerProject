@@ -7,9 +7,11 @@ function guess() {
       setHiddenFields();
     }
     if(validateInput(input.value) == false){
-      return false;
+      return;
     }
     attempt.value++
+
+    getResults();
 }
 
 //implement new functions here
@@ -44,4 +46,8 @@ function validateInput(input){
    }
    html += "</div></div>";
    document.getElementById("results").innerHTML += html;
+   if(input == answer.value){
+     return true;
+   }
+   return false;
  }
